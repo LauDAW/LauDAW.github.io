@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,31 +18,32 @@
                 <div class="row g-0">
                     <div class="col-sm-5 text-center mt-4">
                             <div class="container">
-                                <img src="https://thispersondoesnotexist.com/" class="card-img-top image" alt="En verdad esta persona no existe">
+                                <div class="accountPictureContainer">
+                                </div>
                                 <div class="overlay">
-                                    <p class="text influcard">Ver influcard</p>
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
-                            <p class="mt-2"><i class="fab fa-instagram icon-margin" style="color:#C13584;"></i> nombrecito</p>
-                            <p>Mujer, edad</p>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
                             <p>España</p>
-                            <p>Veggie, runner...</p>
+                            <p class="profile-info"></p>
                         
                     </div>
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title">Nombrecito</h5>
-                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span> K</span></p>
-                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span> K</span></p>
-                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span> K</span></p>
-                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span> K</span></p>
-                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span> K</span></p>
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
                             <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
                                 <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-bars"></i>
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
                                     <li><a class="dropdown-item" href="#">Opción 2</a></li>
                                     <li><a class="dropdown-item" href="#">Opción 3</a></li>
                                 </ul>
@@ -50,7 +53,403 @@
                 </div>
             </div>
         </div>
+
+        <!-- Todo lo de debajo es repetido ya que cargan los mismos datos -->
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-sm-5 text-center mt-4">
+                            <div class="container">
+                                <div class="accountPictureContainer">
+                                </div>
+                                <div class="overlay">
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                </div>
+                            </div>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
+                            <p>España</p>
+                            <p class="profile-info"></p>
+                        
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
+                            <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-sm-5 text-center mt-4">
+                            <div class="container">
+                                <div class="accountPictureContainer">
+                                </div>
+                                <div class="overlay">
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                </div>
+                            </div>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
+                            <p>España</p>
+                            <p class="profile-info"></p>
+                        
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
+                            <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-sm-5 text-center mt-4">
+                            <div class="container">
+                                <div class="accountPictureContainer">
+                                </div>
+                                <div class="overlay">
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                </div>
+                            </div>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
+                            <p>España</p>
+                            <p class="profile-info"></p>
+                        
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
+                            <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-sm-5 text-center mt-4">
+                            <div class="container">
+                                <div class="accountPictureContainer">
+                                </div>
+                                <div class="overlay">
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                </div>
+                            </div>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
+                            <p>España</p>
+                            <p class="profile-info"></p>
+                        
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
+                            <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-sm-5 text-center mt-4">
+                            <div class="container">
+                                <div class="accountPictureContainer">
+                                </div>
+                                <div class="overlay">
+                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                </div>
+                            </div>
+                            <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
+                            <p class="genre-age"></p>
+                            <p>España</p>
+                            <p class="profile-info"></p>
+                        
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="influNameTitle"></span></h5>
+                            <p class="card-text"><i class="fab fa-solid fa-users"></i> Audiencia: <span class="followers"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-user-xmark"></i> Fakes: <span class="fakes"> </span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart"></i> Media Eng: <span class="mediaEng"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-heart-pulse"></i> Eng Rate: <span class="engRate"></span></p>
+                            <p class="card-text"><i class="fab fa-solid fa-eye"></i> Impresiones: <span class="impresions"></span></p>
+                            <div class="dropdown" style="position: absolute; top: 0px; right: 0px">
+                                <button class="btn btn-transparent dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="details.html">Ver influcard</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+                                    <li><a class="dropdown-item" href="#">Opción 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
 </html>
+
+
+<script>
+    
+    const accountPictureContainer = document.getElementsByClassName('accountPictureContainer');
+
+    fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        const accountPicture = data.influcard.account_picture;
+        const backgroundImageURL = data.influcard.account_picture;
+        const influNameJ = data.influcard.name;
+
+        //  Nombre con enlace a su instagram
+        const influNameContainers = document.querySelectorAll('.influName');
+        const influNameTitleContainers = document.querySelectorAll('.influNameTitle');
+        const influNameTextNode = document.createTextNode(influNameJ);
+
+        influNameContainers.forEach((influNameContainer) => {
+            const linkElement = document.createElement('a');
+
+            linkElement.href = data.influcard.account_url;
+            linkElement.textContent = data.influcard.name;
+
+            linkElement.style.color = 'inherit';
+            linkElement.style.textDecoration = 'none';
+
+            influNameContainer.append(linkElement);
+        });
+
+        influNameTitleContainers.forEach((influNameTitleContainer) => {
+            const influNameTextNode = document.createTextNode(influNameJ);
+
+            influNameTitleContainer.appendChild(influNameTextNode);
+        });
+
+        // Género y edad
+        const genre = data.influcard.gender === "1" ? 'Mujer' : 'Hombre';
+        const age = data.influcard.age;
+        const combinedInfo = `${genre}, ${age}`;
+
+        const genreAgeContainers = document.querySelectorAll('.genre-age');
+
+        genreAgeContainers.forEach((genreAgeContainer) => {
+            const genreAgeText = document.createTextNode(combinedInfo);
+            genreAgeContainer.appendChild(genreAgeText);
+        });
+
+
+        // Intereses
+        const interestsContainers = document.querySelectorAll('.profile-info');
+
+        interestsContainers.forEach((interestsContainer) => {
+        const interests = data.influcard.interests.split(',', 2).join(', ') + ', ...';
+
+        interestsContainer.textContent = interests;
+        });
+
+
+        // Followers
+        const followersData = data.influcard.followers_formated;
+        const followersElements = document.querySelectorAll('.followers');
+
+        followersElements.forEach(function(element) {
+            element.textContent = followersData;
+        });
+
+
+        // Followers Fake (formateándolo)
+        const followersFakeData = parseFloat(data.influcard.followers_fake);
+        const formattedFollowersFake = `${(followersFakeData / 1000).toFixed(2)} K`;
+
+        const followersFakeElements = document.querySelectorAll('.fakes');
+
+        followersFakeElements.forEach(function(element) {
+            element.textContent = formattedFollowersFake;
+        });
+
+
+        // Media Eng
+        const avgEngagementData = parseFloat(data.influcard.avg_engagement);
+        const formattedAvgEngagement = `${(avgEngagementData / 1000).toFixed(2)} K`;
+
+        const mediaEngElements = document.querySelectorAll('.mediaEng');
+
+        mediaEngElements.forEach(function(element) {
+            element.textContent = formattedAvgEngagement;
+        });
+
+
+        // Eng Rate
+        const erAudienciaValue = parseFloat(data.influcard.er_audiencia);
+
+        const formattedErAudiencia = erAudienciaValue.toLocaleString('es-ES', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        });
+        const formattedErAudienciaText = `${formattedErAudiencia} %`;
+
+        const engRateElements = document.querySelectorAll('.engRate');
+
+        engRateElements.forEach(function(element) {
+        element.textContent = formattedErAudienciaText;
+        });
+                
+
+        // Impresiones
+        const impresionsData = data.influcard.impressions_formated;
+        const imprElements = document.querySelectorAll('.impresions');
+
+        imprElements.forEach(function(imprElement) {
+            imprElement.textContent = impresionsData;
+        });
+
+
+        // Icon
+        
+        const rrssContainers = document.querySelectorAll('.icon-container');
+
+        rrssContainers.forEach(function(rrssContainer) {
+            const iconElement = document.createElement('i');
+            iconElement.className = `${data.influcard.rrss_icon} icon-margin`;
+            iconElement.style.color = '#C13584';
+            rrssContainer.appendChild(iconElement);
+        });
+
+
+
+
+
+        // Pintar el avatar desde el json
+        for (let aPicture of accountPictureContainer) {
+        if (accountPicture) {
+            const imageElement = document.createElement('img');
+            imageElement.src = accountPicture;
+
+            imageElement.classList.add('card-img-top', 'image');
+                aPicture.appendChild(imageElement);
+                
+                // Pintar en el fondo del card la misma imagen centrada, sin que se repita, y con menos opacidad
+                if (backgroundImageURL) {
+                    const styleElement = document.createElement('style');
+                    styleElement.textContent = `.card {
+                        background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.9)), url("${backgroundImageURL}");
+                        background-size: 100% auto;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+                        margin-bottom: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5%;
+                    }`;
+                    
+                    document.head.appendChild(styleElement);
+                }
+                
+            } else {
+                console.error('El campo "account_picture" está vacío en el JSON.');
+            }
+        }
+    });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const verInflucardLink = document.getElementById("verInflucardLink");
+
+  verInflucardLink.addEventListener("click", function(event) {
+    event.preventDefault(); // Evitar la redirección inmediata
+    
+    Swal.fire({
+      title: 'Cargando...',
+      showConfirmButton: false,
+      onBeforeOpen: () => {
+        Swal.showLoading();
+        setTimeout(() => {
+          window.location.href = verInflucardLink.getAttribute("href");
+        }, 3000); // 
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+  });
+});
+
+</script>

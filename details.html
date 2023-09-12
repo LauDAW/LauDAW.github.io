@@ -6,27 +6,51 @@
     <title>Influcard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Primera row con tres columnas (col-4) -->
             <div class="col-4">
-                <!-- Imagen pequeña y redondeada -->
                 <div class="d-flex align-items-center position-relative" style="min-height: 180px;padding:10px;">
-                    <img src="https://thispersondoesnotexist.com/" alt="Imagen" class="w-25 avatar-img">
+                    <div class="w-25 avatar-img imagen avatar_user"></div>
                     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Superposición" class="rounded-circle position-absolute top-0 start-0" style="width: 50px;">
                     <div class="ms-2">
-                        <p>Nombrecito</p>
-                        <p><i class="fab fa-instagram icon-margin" style="color:#C13584;"></i> <a href="index.html" style="text-decoration: none;">nombrecito</a></p>
-                        <p>ES - Mujer, 32 años</p>
+                        <h3 class="name text-muted"></h3>
+                        <div class="insta mb-4"></div>
+                        <div class="influData"></div>
                     </div>
                 </div>
-                
-                <div class="card">
+            </div>
+
+            <div class="col-4">
+                <div style="min-height: 180px;padding:10px;">
+                    <p>Dato BDato BDato BDato BDato BDato BDato BDato BDato BDatoDato BDato BDato B</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div style="min-height: 180px;padding:10px;">
+                    <div style="margin-left:30px;">
+                        <p style="font-size: 12px;"><i class="fab fa-solid fa-right-from-bracket"></i> Salir</p>
+                        <div id="descargar"><p  class="clickable" style="font-size: 12px;"><i class="fab fa-solid fa-download"></i> Descargar influcard</p></div>
+                        <p style="font-size: 12px;"><i class="fab fa-solid fa-eye"></i> Ver perfil</p>
+                    </div>
+                    <p style="font-size: 12px;" class="mt-2 last_update"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="audience_tab" class="col-4">
+                <!-- <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
                             <span class="badge bg-primary rounded-circle p-2">
@@ -36,136 +60,46 @@
                         </h5>
                     </div>
                 </div>
-                <!-- Tres tarjetas debajo de Card 1 -->
+                
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Subcard 1</h5>
-                        <p class="card-text">Contenido de Subcard 1.</p>
+                        <p class="card-text" id="audienceContainer1"></p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Subcard 1.2</h5>
-                        <p class="card-text">Contenido de Subcard 1.2.</p>
+                        <p class="card-text" id="audienceContainer2"></p>
                     </div>
                 </div>
-                <!-- Agregar aquí más tarjetas si es necesario -->
-            </div>
-            <div class="col-4">
-                <div style="min-height: 180px;padding:10px;">
-                    <p>Dato BDato BDato BDato BDato BDato BDato BDato BDato BDatoDato BDato BDato B</p>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            DESEMPEÑO
-                        </h5>         
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text" id="audienceContainer3"></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Tres tarjetas debajo de Card 2 -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Subcard 4</h5>
-                        <p class="card-text">Contenido de Subcard 4.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Subcard 5</h5>
-                        <p class="card-text">Contenido de Subcard 5.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Subcard 6</h5>
-                        <p class="card-text">Contenido de Subcard 6.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-4">
-                <div style="min-height: 180px;padding:10px;">
-                    <div style="margin-left:30px;">
-                        <p style="font-size: 12px;"><i class="fab fa-solid fa-right-from-bracket"></i> Salir</p>
-                        <p style="font-size: 12px;"><i class="fab fa-solid fa-download"></i> Descargar influcard</p>
-                        <p style="font-size: 12px;"><i class="fab fa-solid fa-eye"></i> Ver perfil</p>
-                    </div>
-                    <p style="font-size: 12px;" class="mt-2">Datos actualizados 12/12/2022</p>
-                </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <span class="badge bg-info rounded-circle p-2">
-                                <i class="fa-solid fa-chart-line text-white"></i>
-                            </span>
-                            DESEMPEÑO
-                        </h5>
-                        
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p class="card-text" id="audienceContainer4"></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <!-- Cinco tarjetas debajo de Card 3 -->
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            Audiencia
-                        </p>
-                        <p>
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            Alcance
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            Impresiones
-                        </p>
-                        <p class="card-text">Contenido de Subcard 8.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            Reproducciones
-                        </p>
-                        <p class="card-text">Contenido de Subcard 9.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <p>
-                            <span class="badge bg-primary rounded-circle p-2">
-                                <i class="fa-solid fa-camera-retro"></i>
-                            </span>
-                            Engagement
-                        </p>
-                        <p class="card-text">Contenido de Subcard 10.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Subcard 11</h5>
-                        <p class="card-text">Contenido de Subcard 11.</p>
-                    </div>
-                </div>
+                </div> -->
+            </div>
+            <div id="posts_tab" class="col-4">
+            </div>
+            <div id="performance_tab" class="col-4">
             </div>
         </div>
+    </div>
+
+    <div id="performanceContainer">
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -173,21 +107,145 @@
 </html>
 
 <style>
-  .avatar-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 20%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-  }
+    .avatar-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 50%;
+        border-bottom-right-radius: 20%;
+        border-top-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
 
-  .card {
-    margin-top:10px;
-    box-shadow: 0px 2px 10px rgba(83, 83, 83, 0.2);
-  }
+    .card {
+        margin-top:10px;
+        box-shadow: 0px 2px 10px rgba(83, 83, 83, 0.2);
+    }
+
+    .btn {
+        border-radius: 50px !important;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    /*.m-b-0 {
+        margin-left: 120px;
+    }*/
+  
+    .ic-border, .ic-border2 {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: 0.25rem;
+        padding: 5px;
+    }
+
+    .ic-border2 {
+        padding: 20px;
+    }
+    
+    .progress-bar {
+        height: 100% !important;
+    }
 
 </style>
 
+<script>
+    const audienceContainer1 = document.getElementById('audienceContainer1');
+    const audienceContainer2 = document.getElementById('audienceContainer2');
+
+    fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        // Las distintas columnas de audiencia, posts y desempeño
+        $("#audience_tab").append(data.audience_tab);
+        eval($("#audience_tab").find("script").text());
+
+        $("#posts_tab").append(data.posts_tab);
+        eval($("#posts_tab").find("script").text());
+
+        $("#performance_tab").append(data.performance_tab);
+        eval($("#performance_tab").find("script").text());
+
+
+        // Nombre
+        const nameElement = document.querySelector(".name");
+        nameElement.textContent = data.influcard.name;
+
+        const instaElement = document.querySelector(".insta");
+
+        // El enlace a su instagram con su nombre y el icono de ig
+        const iconElement = document.createElement("i");
+        iconElement.className = "icon-margin " + data.influcard.rrss_icon;
+        iconElement.style.color = "#C13584";
+        iconElement.style.marginRight = "5px";
     
+        const linkElement = document.createElement("a");
+        linkElement.href = data.influcard.account_url;
+        linkElement.textContent = data.influcard.name
+        linkElement.style.textDecoration = "none"; 
+        
+        instaElement.appendChild(iconElement);
+        instaElement.appendChild(linkElement);
+
+        // País, género y años
+        const influDataElement = document.querySelector(".influData");
+
+        const gender = data.influcard.gender === "1" ? "Mujer" : "Hombre"; 
+        const age = data.influcard.age;
+        const country = data.influcard.country;
+
+        const formattedText = `${country} - ${gender}, ${age} años`;
+
+        influDataElement.textContent = formattedText;
+
+        // Avatar
+        const newImageUrl = data.influcard.account_picture;
+        const newImage = document.createElement("img");
+
+        newImage.classList.add("avatar-img", "imagen");
+
+        newImage.src = newImageUrl;
+
+        const avatarUser = document.querySelector(".avatar_user");
+        avatarUser.appendChild(newImage);
+
+        // Última actualización
+        const updateElement = document.querySelector(".last_update");
+        updateElement.textContent = "Datos actualizados a " + data.influcard.lastupdate;
+
+
+    })
+    .catch(error => {
+        console.error('Error al cargar el JSON:', error);
+    });
+
+    // Alert al descargar
+
+    var xhr;
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const botonDescargar = document.getElementById("descargar");
+
+        botonDescargar.addEventListener("click", function() {
+            // Muestra un SweetAlert2 con un tiempo de espera de 4 segundos
+            Swal.fire({
+                title: "Espere...",
+                text: "Descargando...",
+                timer: 4000, 
+                timerProgressBar: false,
+                showConfirmButton: false,
+                allowOutsideClick: false
+            }).then(() => {
+                
+                const enlace = document.createElement("a");
+                enlace.href = "5.png"; 
+                enlace.download = "imagen.png"; 
+                enlace.target = "_blank"; 
+
+                
+                enlace.click();
+            });
+    });
+});
+
+</script>
