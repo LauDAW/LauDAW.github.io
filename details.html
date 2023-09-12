@@ -31,8 +31,11 @@
             </div>
 
             <div class="col-4">
-                <div style="min-height: 180px;padding:10px;">
-                    <p>Dato BDato BDato BDato BDato BDato BDato BDato BDato BDatoDato BDato BDato B</p>
+                <div class="small" style="min-height: 180px;padding:10px;">
+                    <p>Aquí iría la los progress bar circulares pero no he encontrado manera. De todos modos, los porcentajes, sacados del JSON, son: </p>
+                    <p class="reach small"></p>
+                    <p class="relevance small"></p>
+                    <p class="resonance small"></p>
                 </div>
             </div>
 
@@ -212,6 +215,17 @@
         // Última actualización
         const updateElement = document.querySelector(".last_update");
         updateElement.textContent = "Datos actualizados a " + data.influcard.lastupdate;
+
+        // Reach, relevance y resonance
+        
+        const reachElement = document.querySelector(".reach");
+        reachElement.textContent = "Reach " + data.influcard.reach_formated_graph + '%';
+        
+        const relevanceElement = document.querySelector(".relevance");
+        relevanceElement.textContent = "Relevance " + data.influcard.relevance_formated_graph + '%';
+        
+        const resonanceElement = document.querySelector(".resonance");
+        resonanceElement.textContent = "Resonance " + data.influcard.resonance_formated_graph + '%';
 
 
     })
