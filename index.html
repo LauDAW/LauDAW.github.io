@@ -21,7 +21,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -64,7 +64,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -105,7 +105,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -150,7 +150,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -191,7 +191,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -232,7 +232,7 @@
                                 <div class="accountPictureContainer">
                                 </div>
                                 <div class="overlay">
-                                    <a href="details.html"  id="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
+                                    <a href="details.html"  class="verInflucardLink"><p class="text influcard">Ver influcard</p></a>
                                 </div>
                             </div>
                             <p class="mt-2"><i class="icon-container"></i> <span class="influName"></span></p>
@@ -432,10 +432,11 @@
     });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const verInflucardLink = document.getElementById("verInflucardLink");
+    const verInflucardLinks = document.getElementsByClassName("verInflucardLink");
 
-  verInflucardLink.addEventListener("click", function(event) {
+// Iterar a través de la colección y agregar el evento a cada elemento
+for (let i = 0; i < verInflucardLinks.length; i++) {
+  verInflucardLinks[i].addEventListener("click", function(event) {
     event.preventDefault(); // Evitar la redirección inmediata
     
     Swal.fire({
@@ -444,12 +445,13 @@ document.addEventListener("DOMContentLoaded", function() {
       onBeforeOpen: () => {
         Swal.showLoading();
         setTimeout(() => {
-          window.location.href = verInflucardLink.getAttribute("href");
-        }, 3000); // 
+          window.location.href = verInflucardLinks[i].getAttribute("href");
+        }, 3000);
       },
       allowOutsideClick: () => !Swal.isLoading()
     });
   });
-});
+}
+
 
 </script>
